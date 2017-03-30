@@ -1,0 +1,26 @@
+  var endObj = {};
+  var chars = str.split('')
+/*
+  for (var i = 0; i < str.lenght; i++)
+  // extract character from string
+  //var char = function(str) {
+  //  for (var i = 0; i >= str.lenght, i++) {
+  //    str.charAt(i);
+    }
+  };
+  function toObject(str, count) {
+    var resultObject = {};
+    for (var i = 0; i < str.length; i++) {
+      resultObject[str[i]] = count[i];
+    }
+  // save character as variable
+  // count character occurence in string
+  //  var countCount = str.split("i").length -1;
+  // save as variable
+  // create empty object to store future key:value pairs
+  // use variables to create key:value pair, iterated over string
+  //var emptyString = '';
+  //for (var i=str.length-1; i >= 0; i -=1) {
+  //  emptyString += str[i];
+  }
+*/

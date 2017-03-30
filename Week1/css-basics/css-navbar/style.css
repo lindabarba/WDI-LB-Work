@@ -1,0 +1,12 @@
+nav {
+float: right;
+border: solid 5px black;
+background: grey;
+/* WRONG: background-color: grey;*/
+}
+
+#title {
+  margin: 0 auto;
+/*  text-align: center;*/
+  font-size: 32px;
+}
