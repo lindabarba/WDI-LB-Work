@@ -1,7 +1,5 @@
 /*Tic Tac Toe*/
 /* event listeners */
-//document.getElementById('table').addEventListener('click', click);
-//document.getElementById('reset').addEventListener('click', reset);
 document.querySelector('#table').addEventListener('click', click);
 document.querySelector('#reset').addEventListener('click', start);
 
@@ -12,7 +10,6 @@ var playerX = 'X';
 var playerO = 'O';
 var winner;
 var message;
-
 var messageEl = document.querySelector('#message');
 
 /* functions */
@@ -76,15 +73,6 @@ function render(value) {
       cell.textContent = ' ';
     }
   });
-  // if (value = 1) {
-  //   document.getElementById(id).textContent = "X";
-  //   return;
-  // } else if (value = -1) {
-  //   document.getElementById(id).textContent = "O";
-  //   return;
-  // } else {
-  //   return;
-  // }
 }
 
 start();
