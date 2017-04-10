@@ -1,0 +1,141 @@
+4/10
+INTRO:
+double-quotes more conventional
+way more methods in Ruby than JS
+? how many methods is the average programmer familiar with?
+encapsulation - OOP
+	Unlike JavaScript, in Ruby, every "property" on an object is a method, it never contains data.
+	Don't misunderstand, objects contain data, it's just that the data needs to be set and retrieved using method calls.
+"=" is actually a method, this is not "assign"
+everything in Ruby is truthy except "false" and "nil" because all things are objects and objects are truthy
+variable identifiers:
+_local_variable
+@instance_var
+
+[a-z] or _ - Local variable
+$ - Global variable
+@ - Instance variable
+@@ - Class variable
+[A-Z] - A constant (class/module/global)
+
+the way we name variables determines scope
+
+convention is to all caps constants
+
+CONTROL FLOW
+three main types:
+"The execution sequence of instructions in a program determined at run time with the use of control structures."
+
+Everything in Ruby is considered to be truthy except for ________ and ________.
+nil & false
+-
+As compared to JS, there are a couple of values that have different truthiness. What are they?
+0 and ""
+
+`<=>` in action:
+> 5 <=> 10
+=> -1
+> 10 <=> 5
+=> 1
+> 5 <=> 5
+=> 0
+
+correct = true
+puts "Congrats!" if correct == true
+# this is shorter:
+# puts "Congrats!" if correct
+
+When using a while or until loop, we must be careful not put the program's execution into an __________ loop.
+infinite
+How do we avoid the above scenario?
+include condition to exit
+
+In your own words, how would you describe Control Flow?
+
+
+The three primary types of control flow are:
+1) Sequence
+2) ___________ Branching (if & unless)
+3) ___________ Looping (while & until)
+
+Why might you decide to use the modified version of the while/until loop, where the condition test is put at the end of the code block?
+If you want code to run once
+
+--
+
+Section 2 Exercise 1:
+
+print "Enter a, b, or c: "
+choice = gets.chomp
+if choice == "a"
+  puts "a is for apple"
+elsif choice == "b"
+  puts "b is for banana"
+elsif choice == "c"
+  puts "c is for cantaloupe"
+else
+  puts "you're a rebel"
+end
+
+Section 2 Exercise 2:
+
+Julia's code:
+choice = ""
+until choice == "no more fruit"
+  print "Enter a, b or c: "
+  choice = gets.chomp
+  if choice == "a"
+    puts "a is for apple"
+  elsif choice == "b"
+    puts "b is for banana"
+  elsif choice == "c"
+    puts "c is for cantaloupe"
+  else
+    puts "you're a rebel"
+  end
+end
+
+-----
+ARRAYS, HASHED, & BLOCKS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
