@@ -55,20 +55,16 @@ button {
   margin: auto;
 }
 
-.word-cell {
+/*.word {
   border-top: hidden;
   border-right: hidden;
   border-bottom: 2px solid #000;
   border-left: hidden;
-}
+}*/
 
-.hidden-word {
-  font-size: 0.5em;
-  border-top: hidden;
-  border-right: hidden;
-  border-bottom: 2px solid #000;
-  border-left: hidden;
-}
+/*.hidden-word {
+  font-size: 0.5em; if skulls work
+}*/
 
 #keyboard-table {
   width: 75%;

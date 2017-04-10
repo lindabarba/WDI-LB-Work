@@ -11,6 +11,11 @@ var player2;
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
    'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+var words = [
+  ['s', 'e', 'c', 'r', 'e', 't'],
+  ['m', 'u', 'r', 'd', 'e', 'r']
+];
+
 // cache dom elements
 var messageEl = document.getElementById('message');
 
@@ -22,7 +27,8 @@ document.getElementById('keyboard-table').addEventListener('click', handleLetter
 /*--- functions ---*/
 function initialize() {
   message = 'Hey, want to play Hangman?';
-  secretWord = [];
+  secretWord = words[Math.floor(Math.random() * words.length)];
+  // secretWord = [];
   guessWord = [];
   badLetters = [];
   currentPlayer = player1;
@@ -38,6 +44,7 @@ function startNewGame() {
 
 function handleLetterChoice(event) {
   var letter = event.target.textContent;
+  if (letterAlreadyUsed(letter)) return;
   if (currentPlayer === player1) {
     secretWord.push(letter);
   } else if (currentPlayer === player2) {
@@ -45,14 +52,37 @@ function handleLetterChoice(event) {
   } else return;
   console.log(letter);
   console.log(secretWord);
-  render();
+  //render();
 }
 
-function goodOrBad(x) {
+function letterAlreadyUsed(letter) {
+  //check guessWOrd & badLetters
+  return false;
+}
+
+function goodOrBad() {
+  //use ternary here
+  var isw = secretWord.indexOf(letter);
+  if (secretWord.includes(letter) === true) {
+    renderLetterChoice(letter);
+  } else if (secretWord.includes(letter) === false) {
+      badLetters.push(letter);
+      renderBadLetter(letter);
+    }
+    else return;
+    console.log(badLetters);
+}
+
   //if good append to guessWord
   //if bad append to badLetters
 
+/* - checking letters use this:
+  secret.forEach(function(char, idx) {
+  if ( char === letter ) guessWord[idx] = char;
+  });
 
+
+*/
   //take letter, find in secretWord
     //if in secretWord, change innerHTML to reveal
       //message to 'Good one!'
@@ -60,7 +90,6 @@ function goodOrBad(x) {
       //change innerHTML of corresponding keyboard letter to grey or cross-out
       //flip image with corresponding message of increasing doom
         //final image - you're dead and have head fall off
-}
 
 function handleEnter() {
   if (currentPlayer === player1) {
@@ -75,6 +104,8 @@ function handleEnter() {
 
 function render() {
   messageEl.textContent = message;
+  document.getElementById('enter').style.visibility = player2 ? 'hidden' : '';
+  document.getElementById('play-again').style.visibility = player2 ? '' : 'hidden';
   renderGallows();
   renderSecretWord();
   renderLetterChoice();
@@ -85,16 +116,18 @@ function renderGallows() {
 }
 
 function renderSecretWord() {
-/*  this isn't working
-  var newWordCell = document.createElement('td');
-  var newWordText = document.createTextNode ('&#9760');
+  var swLength = secretWord.length;
+  /* var newWordCell = document.createElement('td');
+  var newWordText = document.createTextNode ('*');
   var wordCell = newWordCell.appendChild(newWordText);
-  var wordRow = document.getElementById();
-  for (var idx = 0, idx < secretWord.length, idx++) {
+  var wordRow = document.getElementById('word-row');
+  //jQuery each statement here instead of this mess
+  $('')
+  for (var idx = 0; idx <= secretWord.length; idx++) {
     wordRow.appendChild(wordCell);
-  }
-  document.getElementById("word-row").classList.add("hidden-word");
-  currentPlayer = player2;*/
+  }*/
+  document.getElementById('word-row').classList.add('hidden-word');
+  currentPlayer = player2;
 }
 
 function renderLetterChoice() {

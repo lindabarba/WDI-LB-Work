@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Hangman</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="Hangman-favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nosifer">
@@ -30,16 +31,10 @@
   </div>
   <div class="gallows">
   </div>
-  <div id="word">
+  <div id="word-div">
     <table id="word-table">
       <tr id="word-row">
-        <td class="word-cell">R</td>
-        <td class="word-cell">A</td>
-        <td class="word-cell">C</td>
-        <td class="word-cell">C</td>
-        <td class="word-cell">O</td>
-        <td class="word-cell">O</td>
-        <td class="word-cell">N</td>
+        <td class="word">RACCOON</td>
       </tr>
     </table>
   </div>
@@ -79,6 +74,7 @@
     <table id="enter-row">
       <tr>
         <button id="enter">ENTER</button>
+        <button id="play-again">Play again?</button>
       </tr>
     </table>
   </div>
