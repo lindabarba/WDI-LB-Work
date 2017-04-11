@@ -97,7 +97,7 @@ until choice == "no more fruit"
 end
 
 -----
-ARRAYS, HASHED, & BLOCKS
+ARRAYS, HASHES, & BLOCKS
 
 evens = [2,3,4,5,6,7,8,9]
 
@@ -111,10 +111,75 @@ evens.count do |number|
 end
  - this will iterate over the number 8 not the array because evens.count will return 8
 
+4/11
+RUBY CLASSES, OBJECTS, & METHODS
+--------
+classes - create objects (little factories/blueprints for objects)
+objects - everything, an instance of a class
+methods - functions associated with objects and classes
+
+instatiation - process of creating an object
+classes have a new method that's used to create an instance of a class. A process, not surprisingly, known as instantiation.
+
+attributes - data
+cannot directly access attributes, must use methods to get & set
+helper methods `attr_reader`, `attr_writer`, & `attr_accessor` to do this
+
+OBJECTS
+consist of attributes & methods
+objects interact with each by invoking each other's methods, aka 'sending messages'
+model-real world objects that pertain to application
+
+ATTRIBUTES
+data held within an object
+define properties of object
+
+METHODS
+define behavior or actions available in an object
+define what object does
+
+CLASS
+blueprint used to create objects
+another way - a factory that produces object instances of a certain class
+upper CamelCase
+
+>>>>>>>>>>>>>>> CMD+[ or CMD+] will tab line in from anywhere in line
+
+? What method does initialize mimic in JavaScript?
+	Constructor functions
+
+my_stand.manager = "Pee-wee Herman" is the preferrd syntax
+	my_stand.manager= "Pee-wee Herman"
+
+? What's the special method in a class that is automatically called by Ruby when we create an instance of it?
+	initialize
+
+class variable doesn't need initialization because it lives in class as opposed to instance variable
 
 
 
+? Unlike in JavaScript, we cannot read or change the values of an object's attributes directly. Instead, we must write ________ and/or ________ methods or use Ruby's ________ methods.
+	getter	setter	 accessor
 
+? What's instantiation?
+	creating an instance of a class via Ruby's `new` method
+
+? What sort of variable do we use inside an object to share information throughout that object, including inside all of its methods?
+	instance variables
+
+-------------
+Tic Tac MF Toe
+
+initialize can include welcome message
+
+print board
+store squares in a hash
+invalid move prompt
+
+while until winner:
+get move
+check for winner
+print board
 
 
 
