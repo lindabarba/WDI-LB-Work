@@ -114,10 +114,10 @@ end
 # {a: 2, b: 1, c: 1}
 # array.count(x) = number of times x is in the array
 
-def charFrequency(letters)
+def charFrequency(str)
   hash = {}
-  str.letters.each do |letter|
-    hash[letter] = str.count(letter)
+  str.chars.each do |char|
+    hash[char] = str.count(char)
   end
   return hash
 end
