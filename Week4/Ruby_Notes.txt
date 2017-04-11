@@ -1,6 +1,7 @@
 4/10
 INTRO:
 double-quotes more conventional
+snake_case
 way more methods in Ruby than JS
 ? how many methods is the average programmer familiar with?
 encapsulation - OOP
@@ -97,6 +98,20 @@ end
 
 -----
 ARRAYS, HASHED, & BLOCKS
+
+evens = [2,3,4,5,6,7,8,9]
+
+# What is evens.count?
+evens.count do |number|
+  if number % 2 == 0
+    puts "#{number}"
+  else
+    puts "The number #{number} is odd."
+  end
+end
+ - this will iterate over the number 8 not the array because evens.count will return 8
+
+
 
 
 
