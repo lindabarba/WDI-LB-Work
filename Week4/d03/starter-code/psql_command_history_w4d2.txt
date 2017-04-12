@@ -1,0 +1,133 @@
+\l
+CREATE DATABASE
+CREATE DATABASE test;
+;
+\q
+CREATE DATABASE wdi;
+\c wdi
+\dl
+CREATE TABLE instructors (
+instructor_id SERIAL PRIMARY KEY NOT NULL,
+name          TEXT          NOT NULL,
+experience    INT           NOT NULL,
+website       CHAR(50)
+);
+\dt-see tables in DB
+\dt -see tables in DB
+\dt -see
+CREATE TABLE students (
+student_id SERIAL PRIMARY KEY NOT NULL,
+name TEXT NOT NULL,
+age INT NOT NULL,
+address VARCHAR(50)
+);
+\dt
+INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New York, NY');
+INSERT INTO students VALUES (DEFAULT, 'Jilly Cakes', 30, '123 Webdev Dr, Boston, MA');
+INSERT INTO students VALUES (DEFAULT, 'Johnny Bananas', 25, '555 Five St, Fivetowns, NY');
+INSERT INTO students VALUUES (DEFAULT, 'Jackie Lackie', 101, '2 OldForThis Ct, Fivetowns, NY');
+INSERT INTO students VALUES (DEFAULT, 'Jackie Lackie', 101, '2 OldForThis Ct, Fivetowns, NY');
+INSERT INTO students VALUES (DEFAULT, 'Slaggy McRaggy', 28, 'private');
+\dt
+SELECT column1, column2, column3 FROM instructors
+SELECT * FROM students
+SELECT * FROM students;
+SELECT * FROM students;
+SELECT column1 FROM students;
+SELECT student_id FROM students;
+SELECT name FROM students WHERE age < 100;
+SELECT name, age FROM students ORDER BY age;
+SELECT name, age FROM students ORDER BY age DESC;
+INSERT INTO students VALUES (6, 'Miss Take', 500, 'jibberish');
+UPDATE students SET address = '100 Main St, New York, NY' where address = 'jibberish';
+SELECT * FROM students;
+DELETE FROM students where name = 'Miss Take';
+SELECT * FROM students;
+\q
+\c carmen
+\dt
+SELECT name FROM country ORDER BY population;
+SELECT name FROM country WHERE continent = 'Europe' ORDER BY population;
+\d+ carmen;
+\d[+] carmen;
+\d+ carmen;
+\d+
+\d+ country
+SELECT region FROM country ORDER BY name
+SELECT region FROM country WHERE continent = 'Europe' ORDER BY name;
+SELECT region FROM country WHERE continent = 'Europe' ORDER BY population;
+SELECT name FROM country WHERE region = 'Southern Europe' ORDER BY population;
+SELECT language FROM country WHERE name = 'Holy See (Vatican City State)';
+\dt
+\d+ countrylanguage
+SELECT countrycode FROM country WHERE name = 'Holy See(Vatican City State)';
+SELECT language FROM countrylanguage WHERE name = 'Holy See (Vatican City State)';
+SELECT code FROM country WHERE name = 'Holy See(Vatican City State)';
+SELECT code FROM country WHERE name = 'Holy See (Vatican City State)';
+SELECT language FROM countrylanguage WHERE countrycode = 'VAT';
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian';
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' ORDER BY countrycode;
+SELECT name FROM country, countrylanguage WHERE region = 'Southern Europe' AND WHERE language = 'Italian' ORDER BY name;
+SELECT country.name FROM country, countrylanguage WHERE country.region = 'Southern Europe' AND WHERE countrylanguage.language = 'Italian';
+SELECT country.name FROM country, countrylanguage WHERE country.region = 'Southern Europe' AND countrylanguage.language = 'Italian';
+\d+ countrylanguage
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' AND isofficial = 'true';
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian';
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' AND isofficial = 'true';
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' AND isofficial = 'true' ORDERED BY countrycode;
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' AND isofficial = 'true' ORDER BY countrycode;
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'CHE' or 'ITA' or 'SMR' or 'VAT';
+\d+ country
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'CHE' OR 'ITA' OR 'SMR' OR 'VAT';
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'CHE';
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'ITA';
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'SMR';
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'VAT';
+\d
+\d+ city
+SELECT name FROM city WHERE countrycode = 'ITA' OR 'SMR' OR 'VAT';
+SELECT name FROM city WHERE countrycode = 'ITA' OR 'VAT';
+SELECT name FROM city WHERE countrycode = 'ITA' OR countrycode = 'VAT';
+SELECT name FROM country WHERE region = 'Southern Europe' AND code = 'CHE' OR code = 'ITA' OR code = 'SMR' OR code = 'VAT';
+SELECT name FROM city WHERE countrycode = 'SMR';
+\d+ countrylanguage
+SELECT countrycode FROM countrylanguage WHERE language = 'Italian' AND isofficial = 'true' AND percentage = '100' ORDER BY countrycode;
+SELECT name FROM city WHERE countrycode = 'SMR';
+\d+ city
+SELECT countrycode FROM country WHERE continent = 'South America'
+;
+SELECT code FROM country WHERE continent = 'South America';
+\d+ country
+\d+ city
+SELECT code FROM country WHERE continent = 'South America';
+SELECT name FROM city WHERE name = 'Se*';
+SELECT name FROM city WHERE name = 'S*';
+SELECT name FROM city WHERE name LIKE 'S%';
+\c carmen
+\i clues.sql
+\q
+\c carmen
+\i clues.sql 
+\i world
+\i world.sql
+\q
+\c carmen
+\i world.sql
+clear
+\q
+\c carmen
+SELECT code FROM country WHERE continent = 'South America';
+\d+ city
+SELECT name FROM city WHERE countrycode = 'SMR';
+SELECT name FROM city WHERE name LIKE 'Serra%';
+SELECT countrycode FROM city WHERE name = 'Serra';
+\d+ country
+SELECT capital FROM country WHERE code = 'BRA';
+\dt
+\d+ city
+SELECT name FROM city WHERE id = '211';
+SELECT name FROM city WHERE population = '91084';
+\d+ city
+\d+ country
+\d+ countrylanguage
+\s command_history.txt

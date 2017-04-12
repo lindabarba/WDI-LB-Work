@@ -1,0 +1,18 @@
+4/12
+------
+if primary key of one table entered in another table, they will be linked
+job interview ? - diff between declaritive & imperative
+
+--
+The \c <database_name> command selects a database. You may have multiple SQL databases running on your machine - the \c command ensures that all SQL queries are run on the database you specify.
+NOT NULL - required field
+PRIMARY KEY - this piece of data will be used to unique identify a record
+Different types are:
+varchar(80) - a string that is 80 characters in length or less
+int - a number without a decimal
+real - a number with a decimal
+serial - an autoincrementing integer (e.g., 1 then 2 then 3 ...)
+--
+
+use single quotes in psql
+
