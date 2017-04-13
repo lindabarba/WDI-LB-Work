@@ -16,3 +16,6 @@ serial - an autoincrementing integer (e.g., 1 then 2 then 3 ...)
 
 use single quotes in psql
 
+many to many need join table
+
+think of relationships as one BELONGING to the other
