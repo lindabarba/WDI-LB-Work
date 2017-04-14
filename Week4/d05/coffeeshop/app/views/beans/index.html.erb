@@ -1,0 +1,9 @@
+<h1>Today's Beans</h1>
+
+<ul>
+  <% @beans.each do |bean| %>
+    <li>
+      <strong><%= link_to bean.name, bean_path(bean) %></strong>&nbsp; - &nbsp;<%= bean.roast %>
+    </li>
+  <% end %>
+</ul>

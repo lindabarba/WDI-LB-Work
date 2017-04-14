@@ -1,0 +1,44 @@
+4/14
+rake routes are now rails routes
+
+Models: (from the Rails docs): "A model represents the information (data)^aka resource^ of the application and the rules to manipulate and interact with that data. In the case of Rails, models are primarily used for managing the rules of interaction with a corresponding database table. In most cases, one table in your database will correspond to one model in your application. The bulk of your application's business logic will be concentrated in the models."
+
+Views - templates serverd to client based on request (????)
+
+Controller - handles the request & response, the 'glue'
+
+Explain the use case of Rails. - lightweight, efficient, for CRUD
+
+Where does a Rails application execute? - server (program logic is on server-side)
+
+What are the responsibilities of models? - interfacing with DB & controller
+
+What are the responsibilities of views? - render HTML for client
+
+What are the responsibilities of contollers? - handle requests & response, glue between controller & model
+
+ruby code:
+<% - called clown hats, squids or ruby diamonds
+<%= - called squid with ink
+
+table for every model
+schema is only place that you can find attributes of model
+
+don't ever edit schema directly - change via migrate
+
+in routes.rb
+# could also use '/beans' but below is per style guide
+
+
+option + cmd + . - will close tag in Sublime
+
+root route: 
+
+root to: 'beans#index'
+OR root 'beans#index'
+OR root "beans#index"
+OR root to: "beans#index"
+
+
+----
+ended at ADD NEW MODEL DATA

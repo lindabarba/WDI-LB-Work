@@ -1,0 +1,32 @@
+<%= form_for(course) do |f| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :course_name %>
+    <%= f.text_field :course_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room %>
+    <%= f.number_field :room %>
+  </div>
+
+  <div class="field">
+    <%= f.label :challenging %>
+    <%= f.check_box :challenging %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

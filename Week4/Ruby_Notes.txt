@@ -152,14 +152,14 @@ my_stand.manager = "Pee-wee Herman" is the preferrd syntax
 	my_stand.manager= "Pee-wee Herman"
 
 ? What's the special method in a class that is automatically called by Ruby when we create an instance of it?
-	initialize
+	initialize (calling the .new method)
 
 class variable doesn't need initialization because it lives in class as opposed to instance variable
 
 
 
 ? Unlike in JavaScript, we cannot read or change the values of an object's attributes directly. Instead, we must write ________ and/or ________ methods or use Ruby's ________ methods.
-	getter	setter	 accessor
+	getter	(attr_reader) setter (attr_writer)	 accessor (attr_accessor)
 
 ? What's instantiation?
 	creating an instance of a class via Ruby's `new` method
@@ -201,6 +201,9 @@ NOT
 !true # => false
 !false # => true
 
+
+---------
+Ruby Quiz in Ruby
 
 
 
