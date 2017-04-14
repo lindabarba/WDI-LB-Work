@@ -1,0 +1,65 @@
+4/13
+
+REST
+
+REST - REpresentational State Transfer, is about driving an application's logic by making HTTP calls
+	It allows sw dist. across mult clients to interact w/servers over internet using HTTP
+
+two common scenarios of RESTful client/server interaction:
+
+RESTful APIs
+
+RESTful Routing in Rails
+
+URI - collection and item (also known as unit):
+ex: http://jsonplaceholder.typicode.com/users/5 'users' is collection and '5' is unit
+
+In your own words, what is REST? 
+
+Another word for a HTTP Verb is a HTTP _______. method
+
+A _______ sends a RESTful request, and a _______ responds to that request. client server
+
+A RESTful request consists of a HTTP _______, a _______, and optionally a data payload. verb URI Endpoint
+
+The :id in the URI is called a named parameter in the HTTP request, which we will use heavily in Rails and Node.
+
+Must know 8 routes - 2 new for Rails are GET post/new & GET post/edit
+
+REST method call is synonymous with RESTful request
+
+A Rails app's functionality is driven by what? RESTful request
+
+The software on a server that handles requests and invokes code is known as a _________? router
+
+A _________ definition maps an HTTP verb and URI to _________. route code
+
+Unlike a RESTful API responding with JSON, a Rails application by convention responds to REST method calls with _________. html page
+
+What two pieces of information does a router use when matching a route definition? HTTP verb & URI
+
+How many routes are there per resource in a full-CRUD Rails app? 8
+
+What is one of the two non-RESTful routes and what is it for? GET post/new - provide form for submitting new post to the create action
+
+What is the other non-RESTful route and what is it for? GET post/:id/edit - provide form for editing a post and sending to the update action
+
+What action will the router call if a POST /comments request is received? create new item in comments
+
+What action will the router call if a GET /comments/:id request is received? show the single comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
