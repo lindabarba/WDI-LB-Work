@@ -1,5 +1,6 @@
 <h1><%= @bean.name %></h1>
 
 <p>This coffee is a <%= @bean.roast %> roast from <%= @bean.origin %>, and we have <%= @bean.quantity %> pounds available.</p>
+<%= link_to "Delete this bean!", bean_path(@bean), method: :delete, data: { confirm: "Are you sure you want to delete this bean?"} %>
 
 <%= link_to "Back to the list!", beans_path %>

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 root to: 'beans#index'
 
 get 'beans',  to: 'beans#index'
+get 'beans/new', to: 'beans#new'
+post 'beans',  to: 'beans#create'
 get 'beans/:id', to: 'beans#show', as: :bean
+delete 'beans/:id', to: 'beans#destroy'
 
 end
