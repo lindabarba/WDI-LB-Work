@@ -1,0 +1,10 @@
+<h1>Home List</h1>
+
+<table>
+  <% @homes.each do |home| %>
+    <tr>
+      <td><%= home[:description] %></td>
+      <td><%= home[:sf] %></td>
+    </tr>
+  <% end %>
+</table>

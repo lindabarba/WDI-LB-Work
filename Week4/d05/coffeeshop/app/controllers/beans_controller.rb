@@ -9,7 +9,7 @@ class BeansController < ApplicationController
   end
 
   def create
-    @beans = Bean.new(params.require(:bean).permit(:name, :roast, :origin, :quantity))
+    @beans = Bean.new(bean_params)
 
     if @bean.save
       redirect_to_beans_path
@@ -26,6 +26,26 @@ class BeansController < ApplicationController
     @bean = Bean.find(params[:id])
     @bean.destroy
     redirect_to_beans_path
+  end
+
+  def edit
+    @bean = Bean.find(params[:id])
+  end
+
+  def update
+    @bean = Bean.find(params[:id])
+
+    if @bean.update_attributes(bean_params)
+      redirect_to_beans_path
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def bean_params
+    params.require(:bean).permit(:name, :roast, :origin, :quantity)
   end
 
 end

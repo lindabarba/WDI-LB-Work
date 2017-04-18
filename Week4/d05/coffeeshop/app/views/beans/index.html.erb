@@ -4,6 +4,7 @@
   <% @beans.each do |bean| %>
     <li>
       <strong><%= link_to bean.name, bean_path(bean) %></strong>&nbsp; - &nbsp;<%= bean.roast %>
+      | <%= link_to "Edit this bean!", edit_bean_path(bean) %>
     </li>
   <% end %>
 </ul>

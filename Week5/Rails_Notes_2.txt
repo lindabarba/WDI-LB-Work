@@ -1,0 +1,225 @@
+4/17
+CONTROLLERS & VIEWS
+-
+sqlite is default rails db but postgres is used not sqlite because sqlite can't be deployed
+
+
+Controllers can be thought of as the middleman between the __________ and the __________.
+	model viewer
+
+Is a controller responsible for providing data to the view to be rendered?
+	yes
+
+What are the methods inside of a controller are called?
+	actions
+
+Ultimately, it's important that the controller do what?
+	respond
+
+-
+
+What is a view engine?
+	compiler/engine that compiles text from file into HTML
+
+What is the file extension of views used with the default Rails view engine?
+	.erb
+
+What does that extension stand for?
+	embedded ruby
+
+
+??? option tags
+
+In the Rails request/response cycle, name the three Rails components typically involved in handling the request before a response is returned to the browser.
+	router > controller > view
+
+Assuming a controller#action of accounts#edit, what is the full path of the template that will be rendered by default?
+	*appname*/app/views/accounts/edit.html.erb
+
+Controllers typically provide ______ to a view.
+	data
+
+What is the final responsibility of a controller?
+	respond
+
+
+ACTIVERECORD
+ActiveRecord - is the layer of the Rails framework dedicated to working with data
+		implements the Model in Model-View-Controller app architecture
+		is known as an ORM (Object-Relational-Mapper) which allows to work w/data in code via objects & methods (OOP)
+
+Models
+1:1 mapping to model and table in database
+
+When we create a model class, you will see that no attributes are defined in the model class. The attributes are defined in the database table's schema.
+
+We use models primarily to:
+
+Inform ActiveRecord of the relationships with other models (as shown in the previous diagram).
+Define optional data validations.
+Add custom behavior, for example, provide a full_name method.
+
+
+order of creation of migration matters - may need data/attributes from parent models
+
+rails db:drop - totall remove existing database
+
+**
+ok to edit migration files IF they have not been run
+**
+
+???? is there a command line util to "copy" a migration to make a template of migration?
+
+persistence - process of saving in-memory data to more perm storage like db
+
+Models have a one-to-one mapping with __________ in the database.
+
+A database's schema should only be modified using __________.
+
+If we have a model class called LineItem, what will the table be named?
+
+As our application evolves over time, we use __________ to modify our database's schema.
+
+What benefit does an ORM provide to developers?
+
+CRUD Using ActiveRecord
+
+In the previous lesson we learned how to create data using our model class.
+One way is with the __________ + __________ methods.
+	new save
+The other way is with the __________ method.
+	create
+The new and create methods are called on the __________.
+	Model
+The save method is called on an __________.
+	
+In this lesson, we just created several Person models in the database using the __________ command in Terminal.
+	db:seed
+What's the name of the table holding our Person objects?
+	People
+
+the all method returns an ActiveRecord Relation, which is a way of Rails holding on to a query until it's necessary to hit the database
+
+If we know the id(s) of our model(s), we should use the ________ method to retrieve data because...?
+	find - most performant
+
+Some AR methods return an ActiveRecord Relation, why is this advantageous to the developer?
+	flexibility, holds in memory temporarily until ready to hit DB, can modify query
+	chain "composition"
+
+
+diff bw 'delete' & 'destroy' - destroy will run callbacks, delete does not - customary to always use destroy
+
+Describe two ways to update a model instance?
+	run method on attribute & save or update_attributes
+
+What's the difference between what you get back when querying with where and find_by?
+	where gives you all, find_by the first instance
+
+How do you permanently remove a model from the database?
+	destroy
+
+How do we determine the number of models (rows) in a table or query?
+	Model.count - count method
+
+--------
+def index
+  random = params[:random].exists?
+
+"rails query string"
+2 attributes
+votes - custom action
+form_for - new form template
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
