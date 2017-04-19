@@ -1,0 +1,13 @@
+<h1>Create New Experiment</h1>
+
+ <%= form_for [@scientist, @experiment] do |f| %>
+    <div>
+        <%= f.label :budget %>
+        <%= f.text_field :budget %>
+    </div>
+    <div>
+        <%= f.label :summary, "Summary Description:" %>
+        <%= f.text_area :summary %>
+    </div>
+    <%= f.submit "Save New Experiment" %>
+<% end %>

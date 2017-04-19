@@ -28,7 +28,7 @@ We define associations in our models so that ActiveRecord will know how to form 
 
 We're going to need a Rails app to be able to define models and try out associations in the Rails console.
 
-`$ rails new rails_associations -d postgres -T`
+`$ rails new rails_associations -d postgresql -T`
 
 **YOU DO: Please do the other two steps after creating a new Rails app.**
 
@@ -153,7 +153,7 @@ An empty `ActiveRecord::Associations::CollectionProxy` (an array like object) wa
 
 ## Adding Children
 
-Note that we can create a `Bank` without concern about associations. **Why is this the case?**
+Note that we can create a `Bank` without concern about associations. **Why is this the case?**  **parent has no dependencies**
 
 However, when we want to save a model that is a child of a parent model, as is the case with the `Account` Model, we need to make sure that ActiveRecord knows which parent (`Bank`) the child (`Account`) belongs to so that it can fill in the ______ attribute properly.
 
@@ -183,19 +183,23 @@ Bank.first.accounts
 
 ```ruby
 @bank = Bank.first
-@new_account = @bank.accounts.create({acct_no: 23456, is_savings: false, balance: 44.55)
+@new_account = @bank.accounts.create({acct_no: 23456, is_savings: false, balance: 44.55})
 # if @new_account.persisted? is true, it was created successfully
 ```
 
 #### Review Questions
 
-**A column that holds the primary key of a parent record is called a ___________.**
+**A column that holds the primary key of a parent record is called a ___________.**  
+	FOREIGN KEY
 
-**True or False: ActiveRecord takes care of adding the column referred to in the previous question to the database.**
+**True or False: ActiveRecord takes care of adding the column referred to in the previous question to the database.**  
+	FALSE
 
-**What is the name of the method we add to the parent Model class that informs ActiveRecord that the Model has a one-to-many association with another Model?**
+**What is the name of the method we add to the parent Model class that informs ActiveRecord that the Model has a one-to-many association with another Model?**  
+	has_many
 
-**What attribute type should we use for creating a foreign key?**
+**What attribute type should we use for creating a foreign key?**  
+	references
 
 
 ## Avoiding Errors and/or Orphaned Records

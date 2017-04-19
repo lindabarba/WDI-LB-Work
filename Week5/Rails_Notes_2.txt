@@ -132,7 +132,26 @@ votes - custom action
 form_for - new form template
 
 
+Model.all.sample - random 
+params
 
+bring CDN before stylesheets
+
+DO NOT USE :IDs
+
+Dump database: rails db:dump
+
+?? how to identify the rails DB ? post-migrate is prod
+
+---
+
+formatting after helper in erb (example):
+
+<%= link_to cat.name, cat_path(cat), class: "link" %>
+
+# this adds the CSS class link formatting
+
+--
 
 
 

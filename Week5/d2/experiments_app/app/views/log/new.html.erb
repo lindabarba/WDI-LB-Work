@@ -1,0 +1,13 @@
+<h1>Create New Log</h1>
+
+ <%= form_for [@experiment, @log] do |f| %>
+    <div>
+        <%= f.label :subject_name %>
+        <%= f.text_field :subject_name %>
+    </div>
+    <div>
+        <%= f.label :comment, "Log Comment:" %>
+        <%= f.text_area :comment %>
+    </div>
+    <%= f.submit "Save New Log" %>
+<% end %>

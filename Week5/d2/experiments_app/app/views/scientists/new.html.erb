@@ -1,0 +1,13 @@
+<h1>Create a New Scientist</h1>
+
+<%= form_for @scientist do |f| %>
+    <div>
+        <%= f.label :name, "Name of the scientist:" %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :mad, "Mad?" %>
+        <%= f.check_box :mad %>
+    </div>
+    <%= f.submit "Save New Scientist!" %>
+<% end %>

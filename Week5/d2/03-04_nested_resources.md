@@ -14,14 +14,14 @@
 
 ## Nested Resources
 
-A _nested resource_ is a result of two models having an association with each other.
+A _nested resource_ is a result of two models having an association with each other. NOTE: resource is a table
 
 The _nested resource_ is the child (`belongs_to`), or _many_ side of the relationship.  For example:
 
 ```
 a Scientist has many Experiments, which has many Logs
 ```
-Both `experiments` and `logs` are nested resources - **Why?**
+Both `experiments` and `logs` are nested resources - **Why?** BOTH ARE CHILDREN
 
 ### Set Up a New Rails app
 
@@ -129,7 +129,7 @@ Whenever you're adding columns to a table (attributes to a model), you need to s
 
 ```bash
 # USE THIS ONE:
-$ rails g migration AddExperimentRefToLogs experiment:references
+$ rails g migration AddExperimentRefToLog experiment:references
 ```
 
 Check out the migration to make sure it looks right, then
@@ -419,6 +419,8 @@ As you've seen, ActiveRecord creates methods we can use to access the related mo
 ```
 
 **How could we access all of the `logs` for the first experiment for `@scientist`?**
+```@scientist = Scientist.second```   
+```@scientist.experiments.first.logs``` - using the second scientist
 
 Cool.
 
@@ -439,7 +441,8 @@ class ExperimentsController < ApplicationController
 end
 ```
 
-#### Now the view:
+#### Now the view:   
+There is a typo in a link in this
 
 ```html
 # experiments/show.html.erb
@@ -479,7 +482,7 @@ end
 <%= form_for [@experiment, @log] do |f| %>
     <div class="form-group">
         <%= f.label :subject_name, "Subject:" %>
-        <%= f.text_field :subject_name, class: "form-control" %>
+        <%= f.text_area :subject_name, class: "form-control" %>
     </div>
     # other fields
     <%= f.submit "Add Log", class: "btn btn-success" %>

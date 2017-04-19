@@ -1,0 +1,49 @@
+4/18
+MODEL ASSOCIATIONS - ONE-TO-MANY:
+-
+steps:
+rails new rails_associations -d postgresql -T
+cd rails_associations
+rails db:create
+subl .
+rails g model Bank name
+rails db:migrate
+rails c
+Bank.all #check model
+Bank.create({name: 'Chase'})
+Bank.first #check if it created again if you want
+**rails db:migrate:status
+-----
+foreign key always in child, always holds primary key of parent, data type must match
+-----
+rails g model Account acct_no:integer is_savings:boolean balance:float
+rails db:migrate
+rails g migration AddBankRefToAccount bank:references
+rails db:migrate
+-----
+info from forms comes in via params hash params{}
+-----
+rails g migration AddBankRefToAccount bank:references # after model creation
+rails g model Parentmodelname child:references # during model creation
+
+MANY-TO-MANY
+has_and_belongs_to_many method - join table must be created
+join table is named alphanumerically by model names
+data in join table cannot be accessed by has_and_belongs_to_many
+Example:
+Patron
+has_many :concerts, through: :tickets
+has_many :tickets
+
+Ticket
+belongs_to :patron
+belongs_to :concert
+
+Concert
+has_many :patrons, through: :tickets
+has_many :tickets
+
+-----
+NESTED RESOURCES AND ROUTING IN RAILS
+--
+rails db:drop # to dump database
