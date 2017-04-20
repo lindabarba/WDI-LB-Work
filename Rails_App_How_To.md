@@ -1,6 +1,6 @@
 1. Terminal command: ```rails new <name_of_app> -d postgresql -T```
 2. Get in the new app directory cd <name_of_app>
-3. Github repo steps here
+3. Github repo steps here: http://railsapps.github.io/rails-git.html
 4. Open files in Sublime if you want ```subl .```
 5. Create Rails database: ```rails db:create```
 6. Start Rails server: ```rails s```
