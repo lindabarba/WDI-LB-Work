@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+  <h2>Todos</h2>
+  <ul>
+   <% todos.forEach(function(t,i) { %>
+     <li>
+       <%= t.todo %>
+        -
+       <%= t.done ? 'done' : 'not done' %>
+        -
+       <form method="POST" action="/<%= i %>?_method=DELETE">
+        <button type="submit">Delete resource</button>
+       </form>
+     </li>
+   <% }); %>
+  </ul>
+  <form action="/todos" method="POST">
+   <input type="text" name="newTodo">
+   <input type="submit" value="Add Todo">
+  </form>
+</body>
+</html>
