@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Movies</h1>
+  <table>
+    <tr>
+      <td>Movie Title</td>
+      <td>Release Year</td>
+      <td>Rating</td>
+      <td>Cast</td>
+      <td>Now Showing?</td>
+      <td>Delete This Movie</td>
+    </tr>
+    <% movies.forEach(function(movie) { %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.releaseYear %></td>
+      <td><%= movie.rating %></td>
+      <td><%= movie.cast.join(', ') %></td>
+      <td><%= movie.nowShowing ? 'Yes' : 'No' %></td>
+      <td>
+        <form method="POST" action="/movies/<%= movie.id %>?_method=DELETE">
+          <button type="submit">Delete movie</button>
+        </form></td>
+      <td><a href="/movies/<%= movie.id %>/edit">Edit Movie</a></td>
+      </tr>
+  <% }) %>
+  </table>
+  <a href="/movies/new">New Movie</a>
+</body>
+</html>

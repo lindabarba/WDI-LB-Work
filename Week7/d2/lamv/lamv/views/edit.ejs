@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lamv</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1>Update Movie</h1>
+
+  <form action="/<%= movie.id %>?_method=PUT" method="POST">
+    <input type="text" name="movieTitle" value="<%= movie.title %>"><br>
+    <br>
+    <label>Year Filmed</label>
+    <input type="text" name="movieYear" value="<%= movie.year %>"><br>
+    <br>
+    <label>Film Location</label>
+    <input type="text" name="movieLocation" value="<%= movie.location %>"><br>
+    <br>
+    <label>Movie Description</label>
+    <textarea type="text" name="movieDescription"><%= movie.description %></textarea><br>
+    <br>
+    <input type="submit" value="Update Movie">
+  </form>
+</body>
+</html>

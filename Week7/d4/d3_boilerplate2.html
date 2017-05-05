@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>D3 Sandbox</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+    <body>
+      <script>
+        const svg = d3.select('body').append('svg').attr('width', 1000).attr('height', 1000);
+
+        const cities = [
+          {name: 'London', population: 8416500, continent: 'Europe'},
+          {name: 'New York City', population: 8419000, continent: 'North America'},
+          {name: 'Paris', population: 2241000, continent: 'Europe'},
+          {name: 'Shanghai', population: 24150000, continent: 'Asia'},
+          {name: 'Tokyo', population: 13297000, continent: 'Asia'},
+        ];
+
+        cities.push({name: 'Madrid', population: 3165000, continent: 'Europe'});
+
+        const radiusScale = d3.scaleSqrt().domain([0, 25000000]).range([0, 50]);
+
+        const mySelection = svg.selectAll('circle').data(cities).enter().append('circle').attr('r', function(d) {
+          return radiusScale(d.population);
+        })
+        .attr('cx', 200)
+        // .attr('cy', 500)
+        .attr('cy', function(d,i) {
+          return i * 200 + 100;
+        })
+      </script>
+    </body>
+  </html>

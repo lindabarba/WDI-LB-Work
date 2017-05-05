@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>D3 Sandbox</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+    <body>
+      <script>
+        const w = 500;
+        const h = 100;
+        const barPadding = 1;
+
+        const dataSet = [7, 13, 5, 27, 33, 37, 3, 19]
+
+        const svg = d3.select('body')
+          .append('svg')
+          .attr('width', w)
+          .attr('height', h);
+
+        svg.selectAll('rect')
+          .data(dataSet)
+          .enter()
+          .append('rect')
+          .attr('x', function(d,i) {
+            return i * (w / dataSet.length);
+          })
+          .attr('y', function(d) {
+            return h - (d * 4);
+          })
+          .attr('width', w / dataSet.length - barPadding)
+          .attr('height', function(d) {
+            return d * 4;
+          });
+       </script>
+    </body>
+  </html>

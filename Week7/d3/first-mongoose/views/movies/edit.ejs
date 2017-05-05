@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies</title>
+</head>
+<body>
+  <h2>Edit a Movie</h2>
+  <form action="/movies/<%= movie.id %>?_method=PUT" method="post">
+    <label>Title:
+      <input type="text" name="title" value="<%= movie.title %>">
+    </label><br>
+    <label>Release Year:
+      <input type="text" name="releaseYear" value="<%= movie.releaseYear %>">
+    </label><br>
+    <label>Rating
+      <select name="rating">
+        <option value="G" <% if (movie.rating === "G"){%> selected <%}%>>G</option>
+        <option value="PG" <% if (movie.rating === "PG"){%> selected <%}%>>PG</option>
+        <option value="PG-13" <% if (movie.rating === "PG-13"){%> selected <%}%>>PG-13</option>
+        <option value="R" <% if (movie.rating === "R"){%> selected <%}%>>R</option>
+      </select>
+    </label><br>
+    <label>Cast (separate actors with commas):
+      <input type="text" name="cast" value="<%= movie.cast %>">
+    </label><br>
+    <label>Now Showing:
+      <input type="checkbox" name="nowShowing" <% if (movie.nowShowing === true) { %> checked <%} %> >
+    </label><br>
+    <button type="submit">Update Movie</button>
+  </form>
+</body>
+</html>

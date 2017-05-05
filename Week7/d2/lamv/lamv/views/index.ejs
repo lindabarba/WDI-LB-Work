@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lamv</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/new">New</a>
+    <h1>Movies</h1>
+    <% for (key in movies) { %>
+      <br>
+      <h3><%= movies[key].title %></h3>
+      <h4><%= movies[key].year %></h4>
+      <h5><%= movies[key].location %></h5>
+      <p><%= movies[key].description %></p>
+      <a href='/<%= key %>'>Show</a>
+      <br>
+      <a href="/<%= movies[key].id %>/edit">Edit</a>
+      <br>
+      <form method="POST" action="/<%= movies[key].id %>?_method=DELETE">
+        <button type="submit" value="<%= movies[key].id %>">Delete resource</button>
+      </form>
+      <br>
+    <% } %>
+  </body>
+</html>

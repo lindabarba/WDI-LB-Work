@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Potluck</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Potluck</h1>
+    <p>Welcome to Potluck</p>
+    <table>
+      <tr>
+        <td>Name:</td>
+      </tr>
+      <% students.forEach(function(student) { %>
+      <tr>
+        <td><%= student.name %></td>
+      </tr>
+    <% }) %>
+    </table>
+    <a href="/students/new">New Students</a>
+  </body>
+</html>

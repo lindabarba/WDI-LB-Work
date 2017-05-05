@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><Movies></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Movies List</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Release<br>Year</th>
+        <th>Rating</th>
+        <th>Cast</th>
+        <th>Now<br>Showing</th>
+      </tr>
+      <% movies.forEach(function(m) { %>
+
+<%= console.log(m) %>
+        <tr>
+          <td><%= m.title %></td>
+          <td><%= m.releaseYear %></td>
+          <td><%= m.rating %></td>
+          <td><%= m.cast.join(', ') %></td>
+          <td><%= m.nowShowing ? 'Yes' : 'No' %></td>
+        </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Student</title>
+</head>
+<body>
+  <h2>Enter a New Student</h2>
+  <form action="/students" method="post">
+    <label>Name:
+      <input type="text" name="name">
+    </label><br>
+    <label>Cuisine:
+      <select name="cuisine">
+        <option value="Main">Main</option>
+        <option value="Side">Side</option>
+      </select>
+    </label><br>
+    <label>Dish:
+      <input type="text" name="dish">
+    </label><br>
+    <input type="submit" value="Add Student">
+  </form>
+</body>
+</html>
