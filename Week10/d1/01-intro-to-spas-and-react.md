@@ -23,11 +23,11 @@
 
 ### Review - What is a Single-Page App?
 
-We've talk about them quite a bit - **what are they?**
+We've talk about them quite a bit - **what are they? - they avoid full-page refresh** 
 
 <img src="https://i.imgur.com/m01TbLF.png">
 
-In a traditional app, if we clicked a link, submitted a form, or typed in the address bar, **what happened?**
+In a traditional app, if we clicked a link, submitted a form, or typed in the address bar, **what happened? a req will go to server, server processes, redirects or renders view to browser**
 
 In a SPA, we still want to be able to access different views by clicking links, submitting forms, etc., however, we want the UI to change without the currently displayed HTML page going away and being replaced with a new one (known as a full-page refresh).
 
@@ -35,7 +35,7 @@ There are three main concepts that make SPAs possible:
 
 - AJAX communication between client and server
 - Client-side routing
-- Client-side rendering
+- Client-side rendering **(can think of as DOM manipulation)**
 
 ### Client/Server Communication via AJAX
 
@@ -43,7 +43,7 @@ As you've seen, we can use the `fetch` API and utilities such as jQuery to send 
 
 The server then responds and we handle this response in JavaScript.
 
-Although the server typically responds with **____________**, the server can send back whatever it wants. For example, some front-end frameworks regularly make AJAX requests for "partial" HTML templates and "inject" them into the current HTML page.
+Although the server typically responds with **JSON**, the server can send back whatever it wants. For example, some front-end frameworks regularly make AJAX requests for "partial" HTML templates and "inject" them into the current HTML page.
 
 In a React app, all of our UI will have been _loaded_ in the browser with index.html, so AJAX will be used most commonly to fetch data used by the app.
 
@@ -101,7 +101,7 @@ Many front-end frameworks have taken advantage of Hash URIs to implement client-
 
 Okay, so we know by now that SPAs don't load new HTML pages as different features are accessed via client-side routing.
 
-I'll give you a minute to think about how a SPA library/framework might update the browser window when the client route changes. I'll then ask you **to share your thoughts**.
+I'll give you a minute to think about how a SPA library/framework might update the browser window when the client route changes. I'll then ask you **to share your thoughts - components manipulate the DOM**.
 
 ## Intro to React
 

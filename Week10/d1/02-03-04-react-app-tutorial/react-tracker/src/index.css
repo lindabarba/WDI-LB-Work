@@ -1,0 +1,18 @@
+.board {
+  max-width: 100%;
+}
+
+.lane {
+  width: 25%;
+  display: inline-block;
+}
+
+.task {
+  border: 1px solid black;
+  margin: 2px;
+  padding: 8px;
+}
+
+.lane-header {
+  text-align: center;
+}
